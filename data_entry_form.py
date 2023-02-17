@@ -1,18 +1,18 @@
 import PySimpleGUI as sg
 
-sg.theme('DarkBrown4')   # Add a touch of color
-# All the stuff inside your window.
-layout = [  [sg.Text('Some text on Row 1')],
-            [sg.Text('Enter something on Row 2'), sg.InputText(), sg.InputText()],
+sg.theme('DarkBrown4')
+
+layout = [  [sg.Text('Space Hotel Reservation System')],
+            [sg.Text('Please enter your relevant information. '), sg.InputText(), sg.InputText()],
             [sg.Button('Ok'), sg.Button('Cancel')] ]
 
-# Create the Window
+
 window = sg.Window('Cozmoz Space Hotel Booking', layout)
-# Event Loop to process "events" and get the "values" of the inputs
+
 while True:
     event, values = window.read()
-    if event == sg.WIN_CLOSED or event == 'Cancel': # if user closes window or clicks cancel
+    if event == sg.WIN_CLOSED or event == 'Cancel':
         break
-    print('You entered ', values[0])
+    print('You entered ', values)
 
 window.close()
