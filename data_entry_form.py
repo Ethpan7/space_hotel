@@ -1,4 +1,10 @@
 import PySimpleGUI as sg
+import sqlite3
+
+#note: table called 'name' exists, with rows first_name and last_name both text type
+
+conn = sqlite3.connect('space_hotel_db.db')
+c = conn.cursor()
 
 sg.theme('DarkBrown4')
 
@@ -13,8 +19,14 @@ while True:
     event, values = window.read()
     if event == sg.WIN_CLOSED or event == 'Cancel':
         break
-    print('You entered ', values)
+
+    first_last = [(values[0], values[1])]
+    c.executemany("INSERT INTO name VALUES (?, ?)", first_last)
 
 window.close()
 
-#testing
+c.execute("SELECT * FROM name")
+print(c.fetchall())
+
+conn.commit()
+conn.close()
