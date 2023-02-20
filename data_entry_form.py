@@ -6,7 +6,7 @@ import sqlite3
 conn = sqlite3.connect('space_hotel_db.db')
 c = conn.cursor()
 
-sg.theme('DarkBrown4')
+sg.theme('Green')
 
 layout = [  [sg.Text('Space Hotel Reservation System')],
             [sg.Text('Please enter your relevant information. '), sg.InputText(), sg.InputText()],
