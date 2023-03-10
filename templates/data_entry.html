@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Data Entry Form</title>
+    <style>
+      /* CSS for purple/black theme */
+      body {
+        background-color: #2b2b2b;
+        color: #c7c7c7;
+      }
+      nav {
+        background-color: #4b0082;
+        padding: 10px;
+      }
+      nav a {
+        color: #c7c7c7;
+        text-decoration: none;
+        margin-right: 10px;
+        font-weight: bold;
+      }
+      nav a:hover {
+        color: #fff;
+      }
+      /* CSS for data entry form */
+      form {
+        margin-top: 50px;
+        margin-left: 50px;
+      }
+      label {
+        display: inline-block;
+        width: 150px;
+        margin-bottom: 10px;
+      }
+      input[type="text"], select, textarea {
+        display: inline-block;
+        width: 300px;
+        height: 30px;
+        border-radius: 5px;
+        border: none;
+        margin-bottom: 10px;
+        background-color: #c7c7c7;
+        color: #2b2b2b;
+        padding-left: 10px;
+      }
+      input[type="submit"] {
+        background-color: #4b0082;
+        color: #c7c7c7;
+        border-radius: 5px;
+        border: none;
+        padding: 10px 20px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <nav>
+      <a href="/">Home</a>
+      <a href="/data-entry">Data Entry</a>
+    </nav>
+    
+    <!-- Data entry form -->
+    <form method="POST" action="{{ url_for('data_entry') }}">
+      <label for="credit_card_info">Credit Card Info:</label>
+      <input type="text" id="credit_card_info" name="credit_card_info"><br>
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name"><br>
+
+      <label for="last_name">Last Name:</label>
+      <input type="text" id="last_name" name="last_name"><br>
+
+      <label for="payment_choice">Payment Choice:</label>
+      <select id="payment_choice" name="payment_choice">
+        <option value="credit_card">Credit Card</option>
+        <option value="debit_card">Debit Card</option>
+        <option value="paypal">PayPal</option>
+      </select><br>
+
+      <label for="passport_number">Passport Number:</label>
+      <input type="text" id="passport_number" name="passport_number"><br>
+
+      <label for="medical_record">Medical Record:</label>
+      <textarea id="medical_record" name="medical_record"></textarea><br>
+
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
