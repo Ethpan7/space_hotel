@@ -3,52 +3,47 @@
   <head>
     <title>Data Entry Form</title>
     <style>
-      /* CSS for purple/black theme */
       body {
-        background-color: #2b2b2b;
-        color: #c7c7c7;
+        background-color: #333333;
+        color: #ffffff;
       }
+      
       nav {
-        background-color: #4b0082;
+        background-color: #663399;
         padding: 10px;
       }
+      
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      
+      nav li {
+        display: inline-block;
+        margin-right: 20px;
+      }
+      
       nav a {
-        color: #c7c7c7;
+        color: #ffffff;
         text-decoration: none;
-        margin-right: 10px;
+        font-size: 18px;
         font-weight: bold;
       }
+      
       nav a:hover {
-        color: #fff;
-      }
-      /* CSS for data entry form */
-      form {
-        margin-top: 50px;
-        margin-left: 50px;
-      }
-      label {
-        display: inline-block;
-        width: 150px;
-        margin-bottom: 10px;
-      }
-      input[type="text"], select, textarea {
-        display: inline-block;
-        width: 300px;
-        height: 30px;
+        color: #663399;
+        background-color: #ffffff;
+        padding: 10px;
         border-radius: 5px;
-        border: none;
-        margin-bottom: 10px;
-        background-color: #c7c7c7;
-        color: #2b2b2b;
-        padding-left: 10px;
       }
-      input[type="submit"] {
-        background-color: #4b0082;
-        color: #c7c7c7;
-        border-radius: 5px;
-        border: none;
-        padding: 10px 20px;
-        font-weight: bold;
+      
+      h1 {
+        color: #663399;
+      }
+      
+      p {
+        font-size: 16px;
       }
     </style>
   </head>
@@ -57,8 +52,8 @@
     <nav>
       <a href="/">Home</a>
       <a href="/data-entry">Data Entry</a>
-    </nav>
-    
+      <a href='/signup'>Sign Up</a>
+  </nav>
     <!-- Data entry form -->
     <form method="POST" action="{{ url_for('data_entry') }}">
       <label for="credit_card_info">Credit Card Info:</label>

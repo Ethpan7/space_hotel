@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sign up</title>
+    <style>
+        body {
+          background-color: #333333;
+          color: #ffffff;
+        }
+        
+        nav {
+          background-color: #663399;
+          padding: 10px;
+        }
+        
+        nav ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+        }
+        
+        nav li {
+          display: inline-block;
+          margin-right: 20px;
+        }
+        
+        nav a {
+          color: #ffffff;
+          text-decoration: none;
+          font-size: 18px;
+          font-weight: bold;
+        }
+        
+        nav a:hover {
+          color: #663399;
+          background-color: #ffffff;
+          padding: 10px;
+          border-radius: 5px;
+        }
+        
+        h1 {
+          color: #663399;
+        }
+        
+        p {
+          font-size: 16px;
+        }
+      </style>
+  </head>
+  <body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/data-entry">Data Entry</a>
+        <a href='/signup'>Sign Up</a>
+    </nav>
+    <h1>Sign up for our service</h1>
+    <form action="/signup" method="post">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required><br>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required><br>
+      <label for="surname">Surname:</label>
+      <input type="text" id="surname" name="surname" required><br>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required><br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required><br>
+      <input type="submit" value="Sign up">
+    </form>
+  </body>
+</html>
