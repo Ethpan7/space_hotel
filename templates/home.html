@@ -2,15 +2,78 @@
 <html>
   <head>
     <title>My Website</title>
+
     <style>
+      @font-face {
+        font-family: FontYk;
+        src: url(MandaloreTitle-lggAe.otf);
+      }
+      * {
+      font-family: FontYk;
+      font-size: 25px;
+      } 
       body {
-        background-color: #333333;
+        background-color: #000000;
         color: #ffffff;
       }
       
+      .intro {
+        width: 20%;
+        top: 50%;
+        position: absolute;
+        left: 40%;
+        border-bottom: 5px solid white;
+        overflow: hidden;
+        animation: animate 2s linear forwards;
+        font-size: 50px;
+      }
+ 
+      @keyframes animate {
+          0% {
+              width: 0px;
+              height: 0px;
+          }
+          30% {
+              width: 250px;
+              height: 0px;
+          }
+          60% {
+              width: 250px;
+              height: 150px;
+          }
+        }
+      
       nav {
-        background-color: #663399;
+        background-color: #000000;
         padding: 10px;
+      }
+      .container {
+        position: relative;
+        width: 100%;
+        min-height: 90vh;
+        background-image: url('picture fam.webp');
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .container2 {
+        position: relative;
+        width: 100%;
+        min-height: 90vh;
+        background-image: url('Second_image.jpg');
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      .text-block {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        background-color: black;
+        color: white;
+        padding-left: 20px;
+        padding-right: 20px;
       }
       
       nav ul {
@@ -27,7 +90,7 @@
       nav a {
         color: #ffffff;
         text-decoration: none;
-        font-size: 18px;
+        font-size: 25px;
         font-weight: bold;
       }
       
@@ -49,14 +112,18 @@
       }
       
       h1 {
-        color: #663399;
+        color: whitesmoke;
       }
       
       p {
-        font-size: 16px;
+        font-size: 25px;
+      }
+
+      img {
+        object-fit: cover;
       }
     </style>
-  </head>
+</head>    
   <body>
     <nav>
       <div class = "nav nav4">
@@ -68,8 +135,11 @@
         </ul>
       </div>
     </nav>
-    <h1>Space Hotel</h1>
+    <div class="container"></div>
+    <h1 class="intro">Welcome to Space</h1>
+    <div class="container2"></div>
+    <h1 class="text-block">Wake up to this view!</h1>
+    
     <p>Book a room today.</p>
   </body>
 </html>
-
