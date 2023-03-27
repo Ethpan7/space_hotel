@@ -2,127 +2,8 @@
 <html>
   <head>
     <title>My Website</title>
-
-    <style>
-      @font-face {
-        font-family: FontYk;
-        src: url(MandaloreTitle-lggAe.otf);
-      }
-      * {
-      font-family: FontYk;
-      font-size: 25px;
-      } 
-      body {
-        background-color: #000000;
-        color: #ffffff;
-      }
-      
-      .intro {
-        width: 20%;
-        top: 50%;
-        position: absolute;
-        left: 40%;
-        border-bottom: 5px solid white;
-        overflow: hidden;
-        animation: animate 2s linear forwards;
-        font-size: 50px;
-      }
- 
-      @keyframes animate {
-          0% {
-              width: 0px;
-              height: 0px;
-          }
-          30% {
-              width: 250px;
-              height: 0px;
-          }
-          60% {
-              width: 250px;
-              height: 150px;
-          }
-        }
-      
-      nav {
-        background-color: #000000;
-        padding: 10px;
-      }
-      .container {
-        position: relative;
-        width: 100%;
-        min-height: 90vh;
-        background-image: url('picture fam.webp');
-        background-position: center center;
-        background-size: cover;
-        background-repeat: no-repeat;
-      }
-      .container2 {
-        position: relative;
-        width: 100%;
-        min-height: 90vh;
-        background-image: url('Second_image.jpg');
-        background-position: center center;
-        background-size: cover;
-        background-repeat: no-repeat;
-      }
-
-      .text-block {
-        position: absolute;
-        bottom: 20px;
-        right: 20px;
-        background-color: black;
-        color: white;
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-      
-      nav ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-      }
-      
-      nav li {
-        display: inline-block;
-        margin-right: 20px;
-      }
-      
-      nav a {
-        color: #ffffff;
-        text-decoration: none;
-        font-size: 25px;
-        font-weight: bold;
-      }
-      
-      nav a:hover {
-        color: #663399;
-        background-color: #ffffff;
-        padding: 10px;
-        border-radius: 5px;
-      }
-
-      .nav ul {
-        display: flex;
-        justify-content: space-around;
-        padding: 0;
-      }
-
-      .nav4 ul {
-        align-items: center;
-      }
-      
-      h1 {
-        color: whitesmoke;
-      }
-      
-      p {
-        font-size: 25px;
-      }
-
-      img {
-        object-fit: cover;
-      }
-    </style>
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+   
 </head>    
   <body>
     <nav>
@@ -140,6 +21,6 @@
     <div class="container2"></div>
     <h1 class="text-block">Wake up to this view!</h1>
     
-    <p>Book a room today.</p>
+    <p class="testing">Book a room today.</p>
   </body>
 </html>
