@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Booking Page</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+    <style>
+        .container3{
+          display:flex;
+          align-items: center;
+        }
+
+        .room img {
+        width: 100%;
+        height: auto;
+        max-width: 500px;
+        display: flex;
+        margin-right: 10px;
+        float: left;
+        padding: 10px;
+        }
+        
+        .rooms {
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        height: 500px;
+        }
+
+        .room {
+        flex: 0 0 auto;
+        margin-right: 50px;
+        width: 500px;
+        flex-direction: column;
+        align-items: left;
+        margin-bottom: 20px;
+        }
+
+        .room-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 120px;
+        }
+
+  
+        .description {
+          width: 50%;
+          margin: 20px 0;
+          padding: 0 20px;
+        }
+  
+        .description h2 {
+          font-size: 30px;
+          font-weight: bold;
+          margin-top: 0;
+        }
+  
+        .description p {
+          font-size: 18px;
+          line-height: 1.5;
+        }
+
+        .text {
+          font-size:20px;
+          padding-right: 20px;
+        }
+
+        a {
+          color: white;
+        }
+      </style>
+  </head>
+  <body>
+    <nav>
+        <div class = "nav nav4">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href='/signup'>Sign Up</a></li>
+            <li><a href='/signin'>Sign-In</a></li>
+            <li><a href='/booking'>Booking</a></li>
+        </div>
+    </nav>
+    <header>
+        <h1>Booking Page</h1>
+    </header>
+    <a href='/checkout'>
+      <div class = "container3">
+        <div class="room">
+          <img src="https://www.pegs.com/wp-content/uploads/2015/12/kameha-space-suite-zurich.jpg" alt="Junior Suite">
+        </div>
+        <div class="text">
+          <h1>Junior Suite</h1>
+          <p>The junior suite in our space hotel offers a luxurious and comfortable stay for our guests. With stunning views of the galaxy and state-of-the-art amenities, this room is perfect for those seeking a unique and unforgettable experience in space.<p>
+        </div> 
+      </div>
+    </a>
+    <a href='/checkout'>
+      <div class="container3">
+        <div class="room">
+          <img src="https://media.istockphoto.com/id/1312843273/photo/futuristic-hotel-room-interior.jpg?s=612x612&w=0&k=20&c=fUIb40ewb0ZhYqkK0uTdQkcZxJN1-sxIz1a5qRyaEBs=" alt="Deluxe Suite">
+        </div>
+        <div class="text">
+          <h1>Deluxe Suite</h1>
+          <p>The deluxe suite at a space hotel offers an unparalleled level of luxury and comfort, boasting spacious living areas, exquisite design, and breathtaking views of the cosmos. With advanced technology and premium amenities, it's the ultimate retreat for those seeking a truly out-of-this-world experience.</p>
+        </div>
+      </div>
+    </a>
+    <a href='/checkout'>
+    <div class="container3">
+      <div class="room">
+        <img src="https://biz-file.com/c/1706/396185-923x480.jpg?2" alt="Executive Suite">
+      </div>
+      <div class='text'>
+        <h2>Executive Suite</h2>
+        <p>The executive suite at a space hotel is the pinnacle of luxury and sophistication, offering a spacious and elegant accommodation for the most discerning guests. With unparalleled amenities, advanced technology, and stunning panoramic views of the galaxy, it's the perfect choice for those seeking the ultimate space experience. Enjoy personalized service, exquisite design, and the thrill of exploring the final frontier from the comfort of your own private sanctuary.</p>
+      </div>
+    </div>
+  </a>
+</body>
+</html>
+

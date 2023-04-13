@@ -1,0 +1,156 @@
+    <!DOCTYPE html>
+<html>
+<head>
+	<title style="color:black;text-align: center;">Space Suite Checkout</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+    <style>
+        form {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-top: 50px;
+        }
+
+        label, input {
+          margin-bottom: 10px;
+        }
+
+        body{
+            background-color:white;
+            color: black;
+        }
+
+        table {
+            margin-top: 50px;
+            text-align: center;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 10px;
+        }
+
+        .center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class = "nav nav4">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/booking">Booking</a></li>
+            <li><a href='/signup'>Sign Up</a></li>
+            <li><a href='/signin'>Sign-In</a></li>
+          </ul>
+        </div>
+      </nav>
+	<h1 style="color:black;">Space Suite Checkout</h1>
+	
+	<p>Starting at $500/night</p>
+
+	<form action="/checkout" method="post">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
+
+        <label for="room_type">Room Type:</label>
+        <select name="room_type" id="room_type" required>
+            <option value="junior_suite">Junior Suite</option>
+            <option value="deluxe_suite">Deluxe Suite</option>
+            <option value="executive_suite">Executive Suite</option>
+        </select>
+
+		<label for="bed_type">Bed Type:</label>
+		<select name="bed_type" id="bed_type" required>
+			<option value="double">Double Bed</option>
+			<option value="single">Single Bed</option>
+		</select>
+
+		<label for="num_nights">Number of Nights:</label>
+		<input type="number" name="num_nights" id="num_nights" min="1" max="14" required>
+		<span>(maximum of 14 nights)</span>
+
+        <label for="card_number">Card Number:</label>
+        <input type="card_number" name="card_number" id="card_number" required>
+
+        <label for="exp_date">Expiration Date:</label>
+        <input type="exp_date" name="exp_date" id="exp_date" required>
+
+        <label for="cvv">CVV Number:</label>
+        <input type="cvv" name="cvv" id="cvv" required>
+
+		<input type="submit" value="Submit">
+	</form>
+
+	<br><br>
+
+	<h2>Receipt</h2>
+
+	<table style="margin-left:auto;margin-right:auto;">
+		<tr>
+			<th>Room Type</th>
+			<th>Bed Type</th>
+			<th>Number of Nights</th>
+			<th>Price per Night</th>
+			<th>Total Price</th>
+		</tr>
+		<tr>
+			<td id="room-type-receipt"></td>
+			<td id="bed-type-receipt"></td>
+			<td id="num-nights-receipt"></td>
+			<td id="price-per-night"></td>
+			<td id="total-price"></td>
+		</tr>
+	</table>
+
+	<br><br>
+
+	<div id="total-price-container"></div>
+
+    <script>
+        const bedType = document.getElementById("bed_type");
+        const bedTypeReceipt = document.getElementById("bed-type-receipt");
+        const numNights = document.getElementById("num_nights");
+        const numNightsReceipt = document.getElementById("num-nights-receipt");
+        const pricePerNight = document.getElementById("price-per-night");
+        const totalPrice = document.getElementById("total-price");
+        const roomType = document.getElementById("room_type");
+        const roomTypeReceipt = document.getElementById("room-type-receipt");
+
+        //update price per night on room type or number of nights selection
+        function updatePrice() {
+        const nights = parseInt(numNights.value);
+        let pricePerNightValue = 0;
+        if (roomType.value === "junior_suite") {
+            pricePerNightValue = 500;
+        } else if (roomType.value === "deluxe_suite") {
+            pricePerNightValue = 750;
+        } else if (roomType.value === "executive_suite") {
+            pricePerNightValue = 10000;
+        }
+        const totalPriceValue = pricePerNightValue * nights;
+
+        bedTypeReceipt.innerHTML = bedType.value;
+        numNightsReceipt.innerHTML = numNights.value;
+        pricePerNight.innerHTML = "$" + pricePerNightValue;
+        roomTypeReceipt.innerHTML = roomType.value.replace("_", " ");
+        totalPrice.innerHTML = "$" + totalPriceValue;
+        }
+
+        // update on initial load
+        updatePrice();
+
+        // update on input changes
+        bedType.addEventListener("input", updatePrice);
+        numNights.addEventListener("input", updatePrice);
+        roomType.addEventListener("input", updatePrice);
+
+    </script>
+</body>
+    

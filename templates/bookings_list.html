@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookings List(Admin)</title>
+    <style>
+      .post {
+            padding: 10px;
+            margin: 5px;
+            background-color: #f3f3f3
+      }
+
+      body {
+        background-color: #333333;
+        color: #ffffff;
+      }
+      
+      nav {
+        background-color: #663399;
+        padding: 10px;
+      }
+      
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      
+      nav li {
+        display: inline-block;
+        margin-right: 20px;
+      }
+      
+      nav a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      
+      nav a:hover {
+        color: #663399;
+        background-color: #ffffff;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      
+      h1 {
+        color: #663399;
+      }
+
+      h3 {
+        color: #000000;
+      }
+      
+      p {
+        font-size: 16px;
+        color: #000000;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href='/users_list'>Users List</a>
+  </nav>
+  {% for book in bookings %}
+        <div class='post'>
+            <h3>ID:</h3>
+            <p>{{ book['id'] }}</p>
+            <h3>Username:</h3>
+            <p>{{ book['username'] }}</p>
+            <h3>Room type:</h3>
+            <p>{{ book['room_type'] }}</p>
+            <h3>Bed type:</h3>
+            <p>{{ book['bed_type'] }}</p>
+            <h3>Number of nights:</h3>
+            <p>{{ book['num_nights'] }}</p>
+            <h3>Card Number:</h3>
+            <p>{{ book['card_number'] }}</p>
+            <h3>Expirary Date:</h3>
+            <p>{{ book['exp_date'] }}</p>
+            <h3>CVV:</h3>
+            <p>{{ book['cvv'] }}</p>
+            <h3>Total Price:</h3>
+            <p>{{ book['total_price'] }}</p>
+        </div>
+    {% endfor %}
