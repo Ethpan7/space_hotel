@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>View Booking</title>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+        <style>
+            body {
+                color:white;
+            }
+            table {
+                width: 400px;
+                border: 1px dashed #AAA;
+            }
+            td {
+                border: 1px solid #CCC;
+            }
+            .small {
+                width: 1px;
+            }
+            .big {
+                width: 50%;
+            }
+            td > div {
+                white-space: nowrap;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+        <div class = "nav nav4">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="/booking">Booking</a></li>
+              <li><a href='/signup'>Sign Up</a></li>
+              <li><a href='/signin'>Sign-In</a></li>
+            </ul>
+          </div>
+        </nav>
+        <div class="div-scroll">
+        <table align = "center">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <td>{{ db[0] }}</td>
+                </tr>
+                <tr>
+                    <th>Username</th>
+                    <td>{{ db[1] }}</td>
+                </tr>
+                <tr>
+                    <th>Room Type</th>
+                    <td>{{ db[2] }}</td>
+                </tr>
+                <tr>
+                    <th>Bed Type</th>
+                    <td>{{ db[3] }}</td>
+                </tr>
+                <tr>
+                    <th>Card Number</th>
+                    <td>{{ db[4] }}</td>
+                </tr>
+                <tr>
+                    <th>Expiry Date</th>
+                    <td>{{ db[5] }}</td>
+                </tr>
+                <tr>
+                    <th>CSV</th>
+                    <td>{{ db[6] }}</td>
+                </tr>
+            </thead>
+        </table>
+        </div>
+        <h1 align="center">View Booking</h>
+    </body>
+</html>

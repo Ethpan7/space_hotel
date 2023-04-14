@@ -62,13 +62,16 @@ def signin():
             if user[5] == password and user[4] == 'cozmoz_admin':
                 return redirect(url_for('users_list'))
             if user[5] == password:
-                return str(bookings)
+                return render_template('viewbooking.html', db=bookings)
             else:
                 return 'Incorrect password'
         else:
             return 'User does not exist'
-
     return render_template('signin.html')
+
+@app.route('/viewbooking/')
+def viewbooking(data):
+    return render_template('viewbooking.html', db=data)
 
 @app.route('/users_list')
 def users_list():
