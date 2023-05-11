@@ -36,6 +36,8 @@ Backend database that securely stores all customer information
 ### Tooling
 * Python
 * SQLite database to store customer data
-* PySimpleGUI
+* Flask
+* sqlite3 library
 
 ### Concept Design and Ideas
+Are included in the images in this repo
